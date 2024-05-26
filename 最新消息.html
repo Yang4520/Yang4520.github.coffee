@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width , initial-scale=1.0">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
+  </script>
+
+<style>
+  .text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 80px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .layoutlist_4 .xrow {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+  }
+
+  .layoutlist_4 .item {
+    padding: 44px 0px;
+    border-bottom: 1px solid #cccccc;
+    height: 100%;
+  }
+
+  .layoutlist_4 .list_subject {
+    text-align: left;
+  }
+
+  .layoutlist_4 .list_subject a {
+    text-decoration: none;
+    color: #474747;
+    font-size: 12px;
+    line-height: 20px;
+  }
+
+  .layoutlist_4 .list_subject .summary {
+    margin: 20px 0px;
+  }
+
+  .layoutlist_4 .list_subject .summary a {
+    color: #818181;
+  }
+
+  @media (min-width: 768px) {
+    .layoutlist_4 .listdate {
+      border-left: 1px solid #cccccc;
+    }
+  }
+
+  .layoutlist_4 .listdate .yearmonth {
+    color: #afafaf;
+    font-size: 12px;
+    letter-spacing: 2px
+  }
+
+  .layoutlist_4 .listdate .day {
+    color: #4b4b4b;
+    font-size: 48px;
+  }
+
+  .fixrow {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+</style>
+
+
+
+
+
+<body>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="http://127.0.0.1:5500/%E5%92%96%E5%95%A1%E5%BB%B3.html">午後時光咖啡館</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          <li class="nav-item">
+            <a class="nav-link" href="http://127.0.0.1:5500/%E9%97%9C%E6%96%BC%E6%88%91%E5%80%91.html">關於我們</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://127.0.0.1:5500/%E7%94%A2%E5%93%81%E4%BB%8B%E7%B4%B9.html">產品介紹</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://127.0.0.1:5500/%E6%9C%80%E6%96%B0%E6%B6%88%E6%81%AF.html">最新消息</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://127.0.0.1:5500/%E8%81%AF%E7%B5%A1%E6%88%91%E5%80%91.html">聯絡我們</a>
+          </li>
+        </ul>
+        <form class="d-flex">
+
+          <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal"
+            data-bs-target="#loginModal">singn</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel"
+    aria-hidden="true">
+
+    <div class="modal-dialog" role="document">
+
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="loginModalLabel">會員登入</h5>
+
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+
+            <span aria-hidden="true">&times;</span>
+
+          </button>
+
+        </div>
+
+        <div class="modal-body">
+          <!-- Your member login form goes here -->
+
+          <label for="member account">會員帳號 :</label>
+
+
+          <input type="member account" id="member account" name="member account" class="form-control">
+
+          <label for="password">會員密碼 :</label>
+
+          <input type="password" id="password" name="password" class="form-control">
+
+        </div>
+
+        <div class="modal-footer">
+
+
+          <button style="margin-inline-end:45%" type="button" class="btn btn-warning">登入</button>
+          <br>
+
+        </div>
+        <div class="d-flex justify-content-center">
+          <button type="button" class="btn btn-success" onclick="openRegistrationModal()">立即註冊</button>
+          <button type="button" class="btn btn-link" onclick="openForgotPasswordModal()">忘記密碼</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+  <div class="modal fade" id="registrationModal" tabindex="-1" role="dialog" aria-labelledby="registrationModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="loginModalLabel">會員註冊</h5>
+
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+
+            <span aria-hidden="true">&times;</span>
+
+          </button>
+
+        </div>
+
+        <div class="modal-body">
+          <!-- Your member login form goes here -->
+
+          <label for="newMemberAccount">新會員帳號 :</label>
+
+
+          <input type="text" id="newMemberAccount" name="newMemberAccount" class="form-control">
+
+          <br>
+          <label for="newPassword">新會員密碼 :</label>
+
+
+          <input type="password" id="newPassword" name="newPassword" class="form-control">
+
+        </div>
+        <br>
+        <div class="modal-footer">
+
+
+          <button style="margin-inline-end:45%" type="button" class="btn btn-warning">登入</button>
+
+
+        </div>
+
+      </div>
+
+
+    </div>
+  </div>
+
+
+  <div class="modal fade" id="forgotPasswordModal" tabindex="-1" role="dialog"
+    aria-labelledby="forgotPasswordModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="forgotPasswordModalLabel">忘記密碼</h5>
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- 加入忘記密碼的內容，例如密碼提示問題和輸入框 -->
+          <label for="Email">電子郵件 :</label>
+          <input type="text" id="Email" name="Email" class="form-control">
+          <br>
+          <label for="account name">帳號名稱 :</label>
+          <input type="text" id="account name" name="account name" class="form-control">
+        </div>
+        <br>
+        <div class="modal-footer">
+          <!-- 在這裡加入忘記密碼的相關按鈕，例如驗證和關閉 -->
+          <button type="button" class="btn btn-primary">驗證</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+  <script>
+    function openRegistrationModal() {
+      // Hide the login modal
+      var loginModal = new bootstrap.Modal(document.getElementById('loginModal'));
+      loginModal.hide();
+
+      // Show the registration modal
+      var registrationModal = new bootstrap.Modal(document.getElementById('registrationModal'));
+      registrationModal.show();
+    }
+
+    function openForgotPasswordModal() {
+      // Implement opening the forgot password modal here
+    }
+
+    function openLoginModal() {
+      // Show the login modal
+      var loginModal = new bootstrap.Modal(document.getElementById('loginModal'));
+      loginModal.show();
+
+      // Hide the registration modal
+      var registrationModal = new bootstrap.Modal(document.getElementById('registrationModal'));
+      registrationModal.hide();
+    }
+
+  </script>
+
+
+
+
+
+  <div class="container-fluid p-0 text-warning text-center ">
+    <img src="./image/43f5cbb9ab85d987030d80b2b0241fcb.jpg" style="width: 100%;">
+    <div class="text-overlay">
+      最新消息
+    </div>
+  </div>
+
+
+  <section class="article-text rwd">
+    <div class="container ">
+      <div class="xrow">
+        <div class="pagecontent col-md-12 list4 menu8 " style="padding:0px 15px;" id="article">
+          <!-- search start-->
+          <!-- search end-->
+
+
+
+          <div class="layoutlist_4">
+            <div class="fixrow">
+              <div class="xrow list clearfix">
+                <div class="col-sm-6 col-md-6">
+                  <div class="_col row item">
+                    <div class="list_img col-sm-4 col-md-4">
+                      <img src="./image/tw_news_list_23l19_37rdefuwag.png" border="0" width="100%">
+                    </div>
+                    <div class="list_subject col-sm-6 col-md-6">
+                      <h4 class="itemlink article_subject"> 迎接2024年~</h4>
+                      <div class="summary tx">
+                        <a class="itemlink article_subject" title="迎接2024年~">12月31號 營業到1/1凌晨3點鐘啦!<br>
+                          <br>
+                          當天推出告別2023 #限定套餐，詳情～請洽～本館！<br>
+                          12/31當天只開放電話訂位, 專人服務喔 ~<br>
+                          陪你跨年到凌晨三點！<br>
+                          <br>
+
+                          <br>
+                          預訂專線: 04-8765432<br>
+                          地址: 台中市南屯區公益路二段51號</a>
+                      </div>
+
+                    </div>
+                    <div class="listdate col-sm-2 col-md-2">
+                      <div class="yearmonth">2023 / 12</div>
+                      <div class="day">19</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6 col-md-6">
+                  <div class="_col row item">
+                    <div class="list_img col-sm-4 col-md-4">
+                      <a class="itemlink article_subject" title="2024年曆~溫暖上市">
+                        <img src="./image/tw_news_list_23l19_teq8kjt46u.png" border="0" width="100%"></a>
+                    </div>
+                    <div class="list_subject col-sm-6 col-md-6">
+                      <h4 class="itemlink article_subject" title="2024年曆~溫暖上市">2024有曆真好*愛心義賣* </h4>
+                      <div class="summary tx">
+                        <a class="itemlink article_subject" title="2024年曆~溫暖上市"></a>
+                        <a class="itemlink article_subject" title="2024年曆~溫暖上市">熱賣中 #限量版豪華桌曆
+                          <br><br>
+                          義賣款項全數捐給 華山基金會
+                          <br>
+                          讓長輩迎接暖心的2024年💖
+                          <br>
+                          每月有專屬的優惠卷(總價值3200元)</a>
+                      </div>
+
+                    </div>
+                    <div class="listdate col-sm-2 col-md-2">
+                      <div class="yearmonth">2023 / 12</div>
+                      <div class="day">15</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="xrow list clearfix">
+                <div class="col-sm-6 col-md-6">
+                  <div class="_col row item">
+                    <div class="list_img col-sm-4 col-md-4">
+                      <h4 class="itemlink article_subject" title="聖誕曲奇餅乾禮盒開賣囉~"><img src="./image/bd84609e7434b06a.jpg"
+                          border="0" width="100%"></h4>
+                    </div>
+                    <div class="list_subject col-sm-6 col-md-6">
+                      <h4 class="itemlink article_subject" title="聖誕曲奇餅乾禮盒開賣囉~">聖誕曲奇餅乾禮盒開賣囉~ </h4>
+                      <div class="summary tx">
+                        <a class="itemlink article_subject" title="聖誕曲奇餅乾禮盒開賣囉~"></a>
+                        <a class="itemlink article_subject" title="聖誕曲奇餅乾禮盒開賣囉~">奇餅乾聖誕新年款~限量上市
+                          <br><br>
+                          絕佳的綿密酥鬆口感，彷彿在口中綻放的美味花朵
+                          <br>
+                          傑出的巧克力口味加入濃郁的可可粉，散發著令人陶醉
+                        </a>
+                      </div>
+
+                    </div>
+                    <div class="listdate col-sm-2 col-md-2">
+                      <div class="yearmonth">2023 / 12</div>
+                      <div class="day">10</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-sm-6 col-md-6">
+                  <div class="_col row item">
+                    <div class="list_img col-sm-4 col-md-4">
+                      <a class="itemlink article_subject" title="特調飲料第2杯半價~"><img
+                          src="./image/tw_news_list_23e31_wzm2sk5tgj.png" border="0" width="100%">
+                      </a>
+                    </div>
+                    <div class="list_subject col-sm-6 col-md-6">
+                      <h4 class="itemlink article_subject" title="特調飲料第2杯半價~">特調飲料第2杯半價~ </h4>
+                      <div class="summary tx"><a href="article_d.php?lang=tw&amp;tb=2&amp;id=188"
+                          class="itemlink article_subject" title="特調飲料第2杯半價~"></a>
+                        <a class="itemlink article_subject" title="特調飲料第2杯半價~">今天的你無論是什麼身份，也無法抗拒來一杯的誘惑～
+                          <br>
+                          呼朋引伴，或是享受獨處都超適用此優惠方案!
+                        </a>
+                      </div>
+
+                    </div>
+                    <div class="listdate col-sm-2 col-md-2">
+                      <div class="yearmonth">2023 / 10</div>
+                      <div class="day">21</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="xrow list clearfix">
+                <div class="col-sm-6 col-md-6">
+                  <div class="_col row item">
+                    <div class="list_img col-sm-4 col-md-4">
+                      <a class="itemlink article_subject" title="精選手沖咖啡登場！">
+                        <img src="./image/news-03_thumb_960.jpg" border="0" width="100%"></a>
+                    </div>
+                    <div class="list_subject col-sm-6 col-md-6">
+                      <h4 class="itemlink article_subject" title="精選手沖咖啡登場！">精選手沖咖啡登場！ </h4>
+                      <div class="summary tx">
+                        <a class="itemlink article_subject" title="精選手沖咖啡登場！"></a>
+                        <a class="itemlink article_subject" title="精選手沖咖啡登場！">精挑細選各區高品質咖啡豆
+                          <br>
+                          每款都是行家首選</a>
+                      </div>
+
+                    </div>
+                    <div class="listdate col-sm-2 col-md-2">
+                      <div class="yearmonth">2023 / 08</div>
+                      <div class="day">20</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6 col-md-6">
+                  <div class="_col row item">
+                    <div class="list_img col-sm-4 col-md-4">
+                      <a class="itemlink article_subject" title="草莓時尚秀">
+                        <img src="./image/News324.jpg" border="0" height="180px" width="100%"></a>
+                    </div>
+                    <div class="list_subject col-sm-6 col-md-6">
+                      <h4 class="itemlink article_subject" title="草莓時尚秀">草莓時尚秀!</h4>
+                      <div class="summary tx">
+                        <a class="itemlink article_subject" title="草莓時尚秀"></a>
+                        <a class="itemlink article_subject" title="松山八德門市~隆重開幕">「產地直送新鮮草莓」揉合「世界頂級可可粉」
+                          <br>
+                          攜手締造『草莓食尚秀』,將於7月20日寵愛登場!<br>
+                          歡迎大家來嘗鮮唷</a>
+                      </div>
+
+                    </div>
+                    <div class="listdate col-sm-2 col-md-2">
+                      <div class="yearmonth">2023 / 07</div>
+                      <div class="day">20</div>
+                    </div>
+                  </div>
+                </div>
+                <div style="clear:both;"></div>
+              </div>
+
+
+              <div style="clear:both;" id="pagecontentend"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+  <br>
+  <br>
+  <footer class="py-7 py-md-9 bg-black">
+    <div class="container px-4">
+      <div class="row gx-7">
+        <div class="col-sm-4">
+          <!-- Heading -->
+          <h4 class="text-xs text-warning" style="padding-top: 10px;">關於我們</h4>
+          <!-- Text -->
+          <p class="mb-6 text-white">
+            「每一顆咖啡豆，都要用貞敬的心看待」
+            率先推廣了精品咖啡,
+            找出咖啡豆的「甜蜜點」，掌握了最佳烘焙曲線。
+            秉持著「把好東西分享出去」的精神，致力將咖啡蔓延至你我的日常。
+            堅信著「味道」是我們永續經營的基礎.
+          </p>
+        </div>
+        <div class="col-sm-3 offset-sm-1">
+          <!-- Heading -->
+          <h4 class="text-xs text-warning" style="padding-top: 10px;">聯絡資訊</h4>
+          <!-- List -->
+          <ul class="list-unstyled mb-6">
+            <li class="d-flex mb-2 text-white">
+              <!-- Location Icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt"
+                viewBox="0 0 16 16" style="color: lightcoral;">
+                <path
+                  d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10" />
+                <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+              </svg>
+              台中市南屯區公益路二段51號
+            </li>
+            <li class="d-flex mb-2 text-white">
+              <!-- Telephone Icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone"
+                viewBox="0 0 16 16" style="color: limegreen;">
+                <path
+                  d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z" />
+              </svg>
+              +04 8765432
+            </li>
+            <li class="d-flex text-white">
+              <!-- Envelope Icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope"
+                viewBox="0 0 16 16" style="color: lightskyblue;">
+                <path
+                  d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z" />
+              </svg>
+              admin@domain.com
+            </li>
+          </ul>
+        </div>
+        <div class="col-sm-2 offset-sm-1">
+          <!-- Heading -->
+          <h4 class="text-xs text-warning" style="padding-top: 10px;">營業時間</h4>
+          <!-- Text -->
+          <div class="mb-3  text-white">
+            <div class="text-xs">星期一 - 星期五</div>
+            <div class="font-serif">10:00 AM-9:00 PM</div>
+          </div>
+          <!-- Text -->
+          <div class="mb-3 text-white">
+            <div class="text-xs">星期六-星期日</div>
+            <div class="font-serif">12:00 AM - 12:00 PM</div>
+          </div>
+        </div>
+        <div class="col-sm-1" style="display: flex; align-items: center;">
+          <span>
+            <img
+              src="./image/stock-photo-banda-aceh-indonesia-nov-social-media-symbols-have-ig-fb-and-others-2069612276 (1).jpg"
+              style="width: 30px;height: 30px;"></span>
+
+          <span style="margin-left: 30px">
+            <img
+              src="./image/stock-photo-banda-aceh-indonesia-nov-social-media-symbols-have-ig-fb-and-others-2069612276.jpg"
+              style="width: 30px;height: 30px"></span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+</body>
+
+
+</html>

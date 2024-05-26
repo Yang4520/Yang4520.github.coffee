@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width , initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    crossorigin="anonymous"></script>
+
+  <style>
+    body {
+      background: url(image/pexels-photo-612252.webp) no-repeat center center fixed;
+      background-size: cover;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+
+    .about-container {
+      padding: 50px 0px;
+    }
+
+    .about-text {
+      margin-bottom: 20px;
+    }
+
+    .about-image {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .about-video {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .about-text,
+    .about-image,
+    .about-video {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s, transform 0.5s;
+    }
+
+    .show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+
+</head>
+
+
+
+
+
+<body>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="http://127.0.0.1:5500/%E5%92%96%E5%95%A1%E5%BB%B3.html">午後時光咖啡館</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          <li class="nav-item">
+            <a class="nav-link" href="http://127.0.0.1:5500/%E9%97%9C%E6%96%BC%E6%88%91%E5%80%91.html">關於我們</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://127.0.0.1:5500/%E7%94%A2%E5%93%81%E4%BB%8B%E7%B4%B9.html">產品介紹</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://127.0.0.1:5500/%E6%9C%80%E6%96%B0%E6%B6%88%E6%81%AF.html">最新消息</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://127.0.0.1:5500/%E8%81%AF%E7%B5%A1%E6%88%91%E5%80%91.html">聯絡我們</a>
+          </li>
+        </ul>
+        <form class="d-flex">
+
+          <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal"
+            data-bs-target="#loginModal">singn</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <br>
+
+
+  <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel"
+    aria-hidden="true">
+
+    <div class="modal-dialog" role="document">
+
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="loginModalLabel">會員登入</h5>
+
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+
+            <span aria-hidden="true">&times;</span>
+
+          </button>
+
+        </div>
+
+        <div class="modal-body">
+          <!-- Your member login form goes here -->
+
+          <label for="member account">會員帳號 :</label>
+
+
+          <input type="member account" id="member account" name="member account" class="form-control">
+
+          <label for="password">會員密碼 :</label>
+
+          <input type="password" id="password" name="password" class="form-control">
+
+        </div>
+
+        <div class="modal-footer">
+
+
+          <button style="margin-inline-end:45%" type="button" class="btn btn-warning">登入</button>
+          <br>
+
+        </div>
+        <div class="d-flex justify-content-center">
+          <button type="button" class="btn btn-success" onclick="openRegistrationModal()">立即註冊</button>
+          <button type="button" class="btn btn-link" onclick="openForgotPasswordModal()">忘記密碼</button>
+
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+  <div class="modal fade" id="registrationModal" tabindex="-1" role="dialog" aria-labelledby="registrationModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="loginModalLabel">會員註冊</h5>
+
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+
+            <span aria-hidden="true">&times;</span>
+
+          </button>
+
+        </div>
+
+        <div class="modal-body">
+          <!-- Your member login form goes here -->
+
+          <label for="newMemberAccount">新會員帳號 :</label>
+
+
+          <input type="text" id="newMemberAccount" name="newMemberAccount" class="form-control">
+
+          <br>
+          <label for="newPassword">新會員密碼 :</label>
+
+
+          <input type="password" id="newPassword" name="newPassword" class="form-control">
+
+        </div>
+        <br>
+        <div class="modal-footer">
+
+
+          <button style="margin-inline-end:45%" type="button" class="btn btn-warning">登入</button>
+
+
+        </div>
+
+      </div>
+
+
+    </div>
+  </div>
+
+
+
+  <div class="modal fade" id="forgotPasswordModal" tabindex="-1" role="dialog"
+    aria-labelledby="forgotPasswordModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="forgotPasswordModalLabel">忘記密碼</h5>
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- 加入忘記密碼的內容，例如密碼提示問題和輸入框 -->
+          <label for="Email">電子郵件 :</label>
+          <input type="text" id="Email" name="Email" class="form-control">
+          <br>
+          <label for="account name">帳號名稱 :</label>
+          <input type="text" id="account name" name="account name" class="form-control">
+        </div>
+        <br>
+        <div class="modal-footer">
+          <!-- 在這裡加入忘記密碼的相關按鈕，例如驗證和關閉 -->
+          <button type="button" class="btn btn-primary">驗證</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script>
+    function openRegistrationModal() {
+      // Hide the login modal
+      var loginModal = new bootstrap.Modal(document.getElementById('loginModal'));
+      loginModal.hide();
+
+      // Show the registration modal
+      var registrationModal = new bootstrap.Modal(document.getElementById('registrationModal'));
+      registrationModal.show();
+    }
+
+    function openForgotPasswordModal() {
+      // Implement opening the forgot password modal here
+    }
+
+    function openLoginModal() {
+      // Show the login modal
+      var loginModal = new bootstrap.Modal(document.getElementById('loginModal'));
+      loginModal.show();
+
+      // Hide the registration modal
+      var registrationModal = new bootstrap.Modal(document.getElementById('registrationModal'));
+      registrationModal.hide();
+    }
+
+    function openForgotPasswordModal() {
+      // Show the forgot password modal
+      var forgotPasswordModal = new bootstrap.Modal(document.getElementById('forgotPasswordModal'));
+      forgotPasswordModal.show();
+    }
+
+
+  </script>
+
+
+
+
+
+
+
+
+
+  <header>
+    <div class="container about-container">
+      <div class="row">
+        <div class="col-md-6">
+          <h1 class="text-center mb-5">About Us</h1>
+          <h5 class="about-text">多年來，默默的陪伴在你我的生活中，
+            對我們而言，料理的動力就是你們的胃，
+            我們做菜，你們大快朵頤，有如在自家廚房一樣的自在舒適。
+            對夥伴來說，那時刻就是最美好的一餐甜美。
+
+          </h5>
+          <br>
+          <h5 class="about-text">能走到20歲的時光,是上帝給我們的奇異恩典,
+            而我們一直努力成為夥伴們的避風港，你們的後廚房，
+            與您走過這些風雨讓我們炒出更美的人生甘、甜、味。</h5>
+        </div>
+        <div class="col-md-6">
+
+          <img src="./image/pexels-photo-18379867.jpeg" alt="About Us Image" class="img-fluid about-image"
+            style="height: 600px;width: 750px;">
+
+        </div>
+      </div>
+
+
+      <br>
+
+      <div class="row">
+        <div class="col-md-6">
+          <div style="width: 100%; position: relative;" onmouseover="playVideo1()" onmouseout="pauseVideo1()">
+            <video controls class="about-video" id="about-video1" style="width: 670px; height: auto;">
+              <source src="./video/pexels_videos_2675509 (1080p).mp4" type="video/mp4" alt="About Us video">
+              <!-- Removed unnecessary code -->
+            </video>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <br><br>
+          <h5 class="about-text" style="margin-left: 15px;">
+            「每一顆咖啡豆，都要用貞敬的心看待」
+            率先推廣了精品咖啡
+            找出咖啡豆的「甜蜜點」，掌握了最佳烘焙曲線。
+            秉持著「把好東西分享出去」的精神，致力將咖啡蔓延至你我的日常。
+            堅信著「味道」是我們永續經營的基礎
+          </h5>
+          <br><br>
+          <h5 class="about-text" style="margin-left: 15px;">
+            因此，您的笑容是我們的動力、給您的享受是我們的堅持，我們會不斷的以最熱情的心將最好的服務呈現給大家，帶給大家最美好的新奢華。</h5>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-md-6">
+          <br><br><br>
+          <h5 class="about-text"> 為了給您「偶爾的奢侈」或「犒賞自己」，我們提供了具有奢華感的商品，並「以消費者的觀點出發，將奢華定義為一種五感的體驗及感受。」</h5>
+          <br>
+          <h5 class="about-text"> 在過程中我們不停的追求自己熱愛之物及興趣，透過與消費者的互動與回饋，從中領會那種因為全心投入所帶來的快樂與滿足。</h5>
+        </div>
+
+        <div class="col-md-6">
+          <img src="./image/pexels-photo-302900.webp" alt="About Us Image" class="img-fluid about-image"
+            style="height: 500px;width: 650px;">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <div style="width: 100%; position: relative;" onmouseover="playVideo2()" onmouseout="pauseVideo2()">
+            <video controls class="about-video" id="about-video2" style="width: 670px; height: auto;">
+              <source src="./video/video (2160p) (2).mp4" type="video/mp4" alt="About Us video">
+              <!-- Removed unnecessary code -->
+            </video>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <br><br>
+          <h5 class="about-text" style="margin-left: 15px;">
+            享受當下是為了促成每個美好昨日，
+
+            回頭看,每天都是值得紀念的,
+            拿起勺子大快朵頤，抓住剛好的步調好好生活，
+
+            讓明日的自己成為更好的存在。</h5>
+          <br><br>
+          <h5 class="about-text" style="margin-left: 15px;">
+            因為想要呈現好的，
+            所以持續努力到了第20個年頭,
+            各分店似孩子般的慢慢誕生與培育。
+
+          </h5>
+
+        </div>
+      </div>
+
+
+
+      <script>
+        var video1 = document.getElementById('about-video1');
+
+        function playVideo1() {
+          video1.play();
+        }
+
+        function pauseVideo1() {
+          video1.pause();
+        }
+      </script>
+
+      <script>
+        var video2 = document.getElementById('about-video2');
+
+        function playVideo2() {
+          video2.play();
+        }
+
+        function pauseVideo2() {
+          video2.pause();
+        }
+      </script>
+    </div>
+
+  </header>
+  <br>
+  <footer class="py-7 py-md-9 bg-black">
+    <div class="container px-4">
+      <div class="row gx-7">
+        <div class="col-sm-4">
+          <!-- Heading -->
+          <h4 class="text-xs text-warning" style="padding-top: 10px;">關於我們</h4>
+          <!-- Text -->
+          <p class="mb-6 text-white">
+            「每一顆咖啡豆，都要用貞敬的心看待」
+            率先推廣了精品咖啡,
+            找出咖啡豆的「甜蜜點」，掌握了最佳烘焙曲線。
+            秉持著「把好東西分享出去」的精神，致力將咖啡蔓延至你我的日常。
+            堅信著「味道」是我們永續經營的基礎.
+          </p>
+        </div>
+        <div class="col-sm-3 offset-sm-1">
+          <!-- Heading -->
+          <h4 class="text-xs text-warning" style="padding-top: 10px;">聯絡資訊</h4>
+          <!-- List -->
+          <ul class="list-unstyled mb-6">
+            <li class="d-flex mb-2 text-white">
+              <!-- Location Icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt"
+                viewBox="0 0 16 16" style="color: lightcoral;">
+                <path
+                  d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10" />
+                <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+              </svg>
+              台中市南屯區公益路二段51號
+            </li>
+            <li class="d-flex mb-2 text-white">
+              <!-- Telephone Icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone"
+                viewBox="0 0 16 16" style="color: limegreen;">
+                <path
+                  d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z" />
+              </svg>
+              +04 8765432
+            </li>
+            <li class="d-flex text-white">
+              <!-- Envelope Icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope"
+                viewBox="0 0 16 16" style="color: lightskyblue;">
+                <path
+                  d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z" />
+              </svg>
+              admin@domain.com
+            </li>
+          </ul>
+        </div>
+        <div class="col-sm-2 offset-sm-1">
+          <!-- Heading -->
+          <h4 class="text-xs text-warning" style="padding-top: 10px;">營業時間</h4>
+          <!-- Text -->
+          <div class="mb-3  text-white">
+            <div class="text-xs">星期一 - 星期五</div>
+            <div class="font-serif">10:00 AM-9:00 PM</div>
+          </div>
+          <!-- Text -->
+          <div class="mb-3 text-white">
+            <div class="text-xs">星期六-星期日</div>
+            <div class="font-serif">12:00 AM - 12:00 PM</div>
+          </div>
+        </div>
+        <div class="col-sm-1">
+          <span>
+            <img
+              src="./image/stock-photo-banda-aceh-indonesia-nov-social-media-symbols-have-ig-fb-and-others-2069612276 (1).jpg"
+              style="width: 30px;height: 30px;"></span>
+          <span>
+            <img
+              src="./image/stock-photo-banda-aceh-indonesia-nov-social-media-symbols-have-ig-fb-and-others-2069612276.jpg"
+              style="width: 30px;height: 30px; margin: 10px;"></span>
+
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function isInViewport(element) {
+      const rect = element.getBoundingClientRect();
+      return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+      );
+    }
+
+    function handleScroll() {
+      const elements = document.querySelectorAll('.about-text, .about-image, .about-video');
+      elements.forEach((element) => {
+        if (isInViewport(element)) {
+          element.classList.add('show');
+        }
+      });
+    }
+
+    // Attach the handleScroll function to the scroll event
+    window.addEventListener('scroll', handleScroll);
+
+    // Trigger handleScroll on page load to check initial visibility
+    handleScroll();
+
+
+
+  </script>
+
+
+
+
+
+</body>
+
+</html>

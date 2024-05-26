@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width , initial-scale=1.0">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
+  </script>
+
+<style>
+  .text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 80px;
+    font-weight: bold;
+    text-align: center;
+  }
+</style>
+
+
+
+
+
+
+<body>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="http://127.0.0.1:5500/%E5%92%96%E5%95%A1%E5%BB%B3.html">午後時光咖啡館</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          <li class="nav-item">
+            <a class="nav-link" href="http://127.0.0.1:5500/%E9%97%9C%E6%96%BC%E6%88%91%E5%80%91.html">關於我們</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://127.0.0.1:5500/%E7%94%A2%E5%93%81%E4%BB%8B%E7%B4%B9.html">產品介紹</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://127.0.0.1:5500/%E6%9C%80%E6%96%B0%E6%B6%88%E6%81%AF.html">最新消息</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://127.0.0.1:5500/%E8%81%AF%E7%B5%A1%E6%88%91%E5%80%91.html">聯絡我們</a>
+          </li>
+        </ul>
+        <form class="d-flex">
+
+          <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal"
+            data-bs-target="#loginModal">login</button>
+
+        </form>
+      </div>
+    </div>
+  </nav>
+
+
+
+  <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel"
+    aria-hidden="true">
+
+    <div class="modal-dialog" role="document">
+
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="loginModalLabel">會員登入</h5>
+
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+
+            <span aria-hidden="true">&times;</span>
+
+          </button>
+
+        </div>
+
+        <div class="modal-body">
+          <!-- Your member login form goes here -->
+
+          <label for="member account">會員帳號 :</label>
+
+
+          <input type="member account" id="member account" name="member account" class="form-control">
+
+          <label for="password">會員密碼 :</label>
+
+          <input type="password" id="password" name="password" class="form-control">
+
+        </div>
+
+        <div class="modal-footer">
+
+
+          <button style="margin-inline-end:45%" type="button" class="btn btn-warning">登入</button>
+
+        </div>
+
+        <div class="d-flex justify-content-center">
+          <button type="button" class="btn btn-success" onclick="openRegistrationModal()">立即註冊</button>
+          <button type="button" class="btn btn-link" onclick="openForgotPasswordModal()">忘記密碼</button>
+
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+
+
+
+
+
+  <div class="modal fade" id="registrationModal" tabindex="-1" role="dialog" aria-labelledby="registrationModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="loginModalLabel">會員註冊</h5>
+
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+
+            <span aria-hidden="true">&times;</span>
+
+          </button>
+
+        </div>
+
+        <div class="modal-body">
+          <!-- Your member login form goes here -->
+          <label for="newName">新會員名稱 :</label>
+
+
+          <input type="newName" id="newName" name="newName" class="form-control">
+          <br>
+          <label for="newMemberAccount">新會員帳號 :</label>
+
+
+          <input type="text" id="newMemberAccount" name="newMemberAccount" class="form-control"
+            pattern="[a-zA-Z0-9]{1,20}" required>
+
+          <br>
+          <label for="newPassword">新會員密碼 :</label>
+
+
+          <input type="password" id="newPassword" name="newPassword" class="form-control">
+
+        </div>
+        <br>
+        <div class="modal-footer">
+
+
+          <button style="margin-inline-end:45%" type="button" class="btn btn-warning">登入</button>
+
+
+        </div>
+
+      </div>
+
+
+    </div>
+  </div>
+
+
+
+  <!-- 在模態框上增加 id -->
+  <div class="modal fade" id="forgotPasswordModal" tabindex="-1" role="dialog"
+    aria-labelledby="forgotPasswordModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="forgotPasswordModalLabel">忘記密碼</h5>
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- 加入忘記密碼的內容，例如密碼提示問題和輸入框 -->
+          <label for="Email">電子郵件 :</label>
+          <input type="text" id="Email" name="Email" class="form-control">
+          <br>
+          <label for="account name">帳號名稱 :</label>
+          <input type="text" id="account name" name="account name" class="form-control">
+        </div>
+        <br>
+        <div class="modal-footer">
+          <!-- 在這裡加入忘記密碼的相關按鈕，例如驗證和關閉 -->
+          <button type="button" class="btn btn-primary">驗證</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script>
+
+    function openRegistrationModal() {
+      // Hide the login modal
+      var loginModal = new bootstrap.Modal(document.getElementById('loginModal'));
+      loginModal.hide();
+
+      // Show the registration modal
+      var registrationModal = new bootstrap.Modal(document.getElementById('registrationModal'));
+      registrationModal.show();
+    }
+
+    function openForgotPasswordModal() {
+      // Implement opening the forgot password modal here
+    }
+
+    function openLoginModal() {
+      // Show the login modal
+      var loginModal = new bootstrap.Modal(document.getElementById('loginModal'));
+      loginModal.show();
+
+      // Hide the registration modal
+      var registrationModal = new bootstrap.Modal(document.getElementById('registrationModal'));
+      registrationModal.hide();
+    }
+
+
+
+
+    function openForgotPasswordModal() {
+      // Show the forgot password modal
+      var forgotPasswordModal = new bootstrap.Modal(document.getElementById('forgotPasswordModal'));
+      forgotPasswordModal.show();
+    }
+
+
+
+
+
+
+ </script>
+
+    
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+  <div class="container-fluid p-0 text-warning text-center ">
+    <img src="./image/17f9fc6a3d9c49f375f4869f40f6b2cb.jpg" style="width: 100%;">
+    <div class="text-overlay">
+      聯絡我們
+    </div>
+  </div>
+  <br>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div style="padding-left: 50px ;">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3640.6038853439177!2d120.64844997485783!3d24.150545373297824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693d964fff6dc5%3A0x5d526ce61b5b9ca6!2zNDA45Y-w5Lit5biC5Y2X5bGv5Y2A5YWs55uK6Lev5LqM5q61NTHomZ8!5e0!3m2!1szh-TW!2stw!4v1703947841983!5m2!1szh-TW!2stw"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+
+
+
+      <div class="col-md-6">
+
+        <div style="padding-left: 100px;">
+
+          <h4>聯絡我們</h4>
+          <form>
+            <p>姓 名 : <input type="text" name="userName" size="30" pattern="[\u4e00-\u9fa5]+" title="請輸入中文姓名" required></p>
+            <p>手 機 : <input type="tel" name="userTel" size="30" pattern="[0-9]{10}" placeholder="0911756542" required>
+            </p>
+            <p>Email: <input type="email" name="userEmail" size="30" pattern=".+@gmail.com"
+                placeholder="jack@gmail.com"></p>
+            <p>性 &nbsp;別 :&nbsp;
+              <input type="radio" id="Male" name="userGender" value="Male" required>男&nbsp;
+              <input type="radio" id="Female" name="userGender" value="Female" required>女
+            </p>
+
+            <p>地&nbsp;&nbsp;&nbsp;址:<input type="text" name="userAddress" size="30" class="form-control"
+                pattern="[\u4e00-\u9fa5]+" title="只能輸入中文" required></p>
+
+            <input type="submit" style="font-size: 15px;  background-color: #4CAF50; 
+            color:white; border: none; padding: 10px 20px;" value="確認送出">
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+  <br>
+  <br>
+  <footer class="py-7 py-md-9 bg-black">
+    <div class="container px-4">
+      <div class="row gx-7">
+        <div class="col-sm-4">
+          <!-- Heading -->
+          <h4 class="text-xs text-warning" style="padding-top: 10px;">關於我們</h4>
+          <!-- Text -->
+          <p class="mb-6 text-white">
+            「每一顆咖啡豆，都要用貞敬的心看待」
+            率先推廣了精品咖啡,
+            找出咖啡豆的「甜蜜點」，掌握了最佳烘焙曲線。
+            秉持著「把好東西分享出去」的精神，致力將咖啡蔓延至你我的日常。
+            堅信著「味道」是我們永續經營的基礎.
+          </p>
+        </div>
+        <div class="col-sm-3 offset-sm-1">
+          <!-- Heading -->
+          <h4 class="text-xs text-warning" style="padding-top: 10px;">聯絡資訊</h4>
+          <!-- List -->
+          <ul class="list-unstyled mb-6">
+            <li class="d-flex mb-2 text-white">
+              <!-- Location Icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt"
+                viewBox="0 0 16 16" style="color: lightcoral;">
+                <path
+                  d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10" />
+                <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+              </svg>
+              台中市南屯區公益路二段51號
+            </li>
+            <li class="d-flex mb-2 text-white">
+              <!-- Telephone Icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone"
+                viewBox="0 0 16 16" style="color: limegreen;">
+                <path
+                  d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z" />
+              </svg>
+              +04 8765432
+            </li>
+            <li class="d-flex text-white">
+              <!-- Envelope Icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope"
+                viewBox="0 0 16 16" style="color: lightskyblue;">
+                <path
+                  d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z" />
+              </svg>
+              admin@domain.com
+            </li>
+          </ul>
+        </div>
+        <div class="col-sm-2 offset-sm-1">
+          <!-- Heading -->
+          <h4 class="text-xs text-warning" style="padding-top: 10px;">營業時間</h4>
+          <!-- Text -->
+          <div class="mb-3  text-white">
+            <div class="text-xs">星期一 - 星期五</div>
+            <div class="font-serif">10:00 AM-9:00 PM</div>
+          </div>
+          <!-- Text -->
+          <div class="mb-3 text-white">
+            <div class="text-xs">星期六-星期日</div>
+            <div class="font-serif">12:00 AM - 12:00 PM</div>
+          </div>
+        </div>
+        <div class="col-sm-1" style="display: flex; align-items: center;">
+          <span>
+            <img
+              src="./image/stock-photo-banda-aceh-indonesia-nov-social-media-symbols-have-ig-fb-and-others-2069612276 (1).jpg"
+              style="width: 30px;height: 30px;"></span>
+
+          <span style="margin-left: 30px">
+            <img
+              src="./image/stock-photo-banda-aceh-indonesia-nov-social-media-symbols-have-ig-fb-and-others-2069612276.jpg"
+              style="width: 30px;height: 30px"></span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+
+
+
+
+
+
+
+</body>
+
+
+</html>
